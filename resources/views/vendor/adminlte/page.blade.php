@@ -55,41 +55,19 @@
             @endif
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
-
                     <ul class="nav navbar-nav">
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ Auth::user()->avatar_url ? Auth::user()->avatar_url : 'https://cdn.webmodularity.com/img/user_default.png' }}" class="user-image" alt="User Image">
-                                <span class="hidden-xs">{{ Auth::user()->person->email }}</span>
+                        @include('vendor.adminlte.navbar.user-menu')
+                        <li>
+                            <a href="#" title="Sign Out" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >
+                                <i class="fa fa-fw fa-power-off"></i>
                             </a>
-
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header">
-                                    <img src="{{ Auth::user()->avatar_url ? Auth::user()->avatar_url : 'https://cdn.webmodularity.com/img/user_default.png' }}" class="img-circle" alt="User Image">
-                                    <p>
-                                        {{ Auth::user()->person->getFullName() }}
-                                        <small>{{  Auth::user()->person->email }}</small>
-                                    </p>
-                                </li>
-
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST">
-                                        {{ csrf_field() }}
-                                        <div class="pull-left">
-                                            <a href="/profile" class="btn btn-default btn-flat">Profile</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <button type="submit" class="btn btn-default btn-flat">Sign out</button>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
-
+                            <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;">
+                                @if(config('adminlte.logout_method'))
+                                    {{ method_field(config('adminlte.logout_method')) }}
+                                @endif
+                                {{ csrf_field() }}
+                            </form>
                         </li>
-
-
                     </ul>
                 </div>
                 @if(config('adminlte.layout') == 'top-nav')

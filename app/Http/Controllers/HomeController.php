@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use WebModularity\LaravelAuth\User\LogUser;
+
 class HomeController extends Controller
 {
 
@@ -12,6 +14,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $recentLogins = LogUser::recentLogins(10)
+            ->with([
+                'logRequest.urlPath'
+            ])
+            ->get();
+
+        return view('home', [
+            'recentLogins' => $recentLogins
+        ]);
     }
 }
