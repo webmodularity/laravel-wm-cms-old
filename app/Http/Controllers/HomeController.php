@@ -16,7 +16,8 @@ class HomeController extends Controller
     {
         $recentLogins = LogUser::recentLogins(10)
             ->with([
-                'logRequest.urlPath'
+                'logRequest.urlPath',
+                'user'
             ])
             ->get();
 

@@ -56,7 +56,7 @@
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        @include('vendor.adminlte.navbar.user-menu')
+                        @include('wmcms::navbar.user-menu')
                         <li>
                             <a href="#" title="Sign Out" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >
                                 <i class="fa fa-fw fa-power-off"></i>

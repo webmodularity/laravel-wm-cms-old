@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <div class="box box-info">
+    <div class="box">
         <div class="box-header with-border">
             <h3 class="box-title">Recent User Logins</h3>
 
@@ -16,78 +16,27 @@
             </div>
         </div>
         <!-- /.box-header -->
-        <div class="box-body">
-            <div class="table-responsive">
-                <table class="table no-margin">
+        <div class="box-body no-padding">
+                <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Order ID</th>
-                        <th>Item</th>
-                        <th>Status</th>
-                        <th>Popularity</th>
+                        <th>User</th>
+                        <th>At</th>
+                        <th>From</th>
+                        <th>Via</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                        <td>Call of Duty IV</td>
-                        <td><span class="label label-success">Shipped</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#00a65a" data-height="20"><canvas style="display: inline-block; width: 34px; height: 20px; vertical-align: top;" width="34" height="20"></canvas></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="label label-warning">Pending</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#f39c12" data-height="20"><canvas style="display: inline-block; width: 34px; height: 20px; vertical-align: top;" width="34" height="20"></canvas></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                        <td>iPhone 6 Plus</td>
-                        <td><span class="label label-danger">Delivered</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#f56954" data-height="20"><canvas style="display: inline-block; width: 34px; height: 20px; vertical-align: top;" width="34" height="20"></canvas></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="label label-info">Processing</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#00c0ef" data-height="20"><canvas style="display: inline-block; width: 34px; height: 20px; vertical-align: top;" width="34" height="20"></canvas></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                        <td>Samsung Smart TV</td>
-                        <td><span class="label label-warning">Pending</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#f39c12" data-height="20"><canvas style="display: inline-block; width: 34px; height: 20px; vertical-align: top;" width="34" height="20"></canvas></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                        <td>iPhone 6 Plus</td>
-                        <td><span class="label label-danger">Delivered</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#f56954" data-height="20"><canvas style="display: inline-block; width: 34px; height: 20px; vertical-align: top;" width="34" height="20"></canvas></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                        <td>Call of Duty IV</td>
-                        <td><span class="label label-success">Shipped</span></td>
-                        <td>
-                            <div class="sparkbar" data-color="#00a65a" data-height="20"><canvas style="display: inline-block; width: 34px; height: 20px; vertical-align: top;" width="34" height="20"></canvas></div>
-                        </td>
-                    </tr>
+                        @foreach ($recentLogins as $recentLogin)
+                            <tr>
+                                <td>{{ $recentLogin->user->person->email }}</td>
+                                <td>{{ $recentLogin->created_at->format('m/d/Y h:i:sa') }}</td>
+                                <td>{{ $recentLogin->logRequest->ip_address }}</td>
+                                <td>{{ $recentLogin->getLoginVia() }}</td>
+                            </tr>
+                        @endforeach()
                     </tbody>
                 </table>
-            </div>
-            <!-- /.table-responsive -->
         </div>
         <!-- /.box-body -->
     </div>
