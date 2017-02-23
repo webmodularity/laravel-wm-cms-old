@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use WebModularity\LaravelAuth\User\LogUser;
+use WebModularity\LaravelUser\LogUser;
 
 class HomeController extends Controller
 {

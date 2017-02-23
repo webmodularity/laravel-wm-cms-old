@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'wm-eloquent',
-            'model' => WebModularity\LaravelAuth\User\User::class,
+            'model' => WebModularity\LaravelUser\User::class,
         ],
 
         // 'users' => [
