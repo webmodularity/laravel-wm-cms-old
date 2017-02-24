@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use WebModularity\LaravelUser\Http\Controllers\Auth\AuthenticatesSocialUsers;
+use WebModularity\LaravelUser\Http\Controllers\Auth\AuthenticatesAndRegistersSocialUsers;
 
 class LoginController extends Controller
 {
@@ -19,7 +19,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers, AuthenticatesSocialUsers;
+    use AuthenticatesUsers, AuthenticatesAndRegistersSocialUsers;
 
     /**
      * Where to redirect users after login.
