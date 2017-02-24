@@ -32,7 +32,7 @@
                                 <td>{{ $recentLogin->user->person->email }}</td>
                                 <td>{{ $recentLogin->created_at->format('m/d/Y h:i:sa') }}</td>
                                 <td>{{ $recentLogin->logRequest->ip_address }}</td>
-                                <td>{{ $recentLogin->getLoginVia() }}</td>
+                                <td>{{ $recentLogin->getVia() }}</td>
                             </tr>
                         @endforeach()
                     </tbody>
