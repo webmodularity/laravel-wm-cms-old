@@ -14,15 +14,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $recentLogins = LogUser::recentLogins(10)
+        $recentUserActivity = LogUser::orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
+            ->limit(25)
             ->with([
+                'logRequest.ipAddress',
                 'logRequest.urlPath',
-                'user'
+                'user.person'
             ])
             ->get();
 
         return view('home', [
-            'recentLogins' => $recentLogins
+            'recentUserActivity' => $recentUserActivity
         ]);
     }
 }
