@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Dashboard')
 
 @section('content_header')
     <h1>Dashboard</h1>
@@ -16,15 +16,15 @@
             </div>
         </div>
         <!-- /.box-header -->
-        <div class="box-body table-responsive no-padding">
-                <table class="table table-hover">
+        <div class="box-body">
+                <table id="recent-user-activity" class="table table-hover table-bordered">
                     <thead>
                     <tr>
-                        <th>Action</th>
                         <th>Time</th>
                         <th>User</th>
+                        <th>IP</th>
+                        <th>Action</th>
                         <th>URL</th>
-                        <th>From</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -35,3 +35,18 @@
         <!-- /.box-body -->
     </div>
 @stop
+
+@push('js')
+    <script>
+        $(function () {
+            $('#recent-user-activity').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": true
+            });
+        });
+    </script>
+@endpush
