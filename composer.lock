@@ -400,12 +400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2d5514cedb88a0b280c5b8ec5179ec86b1bfda57"
+                "reference": "46eb6a061bb50cb20b231813cceef026c576ee8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2d5514cedb88a0b280c5b8ec5179ec86b1bfda57",
-                "reference": "2d5514cedb88a0b280c5b8ec5179ec86b1bfda57",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/46eb6a061bb50cb20b231813cceef026c576ee8e",
+                "reference": "46eb6a061bb50cb20b231813cceef026c576ee8e",
                 "shasum": ""
             },
             "require": {
@@ -521,7 +521,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-02-25 00:31:18"
+            "time": "2017-02-26 13:08:40"
         },
         {
             "name": "laravel/socialite",
@@ -1631,12 +1631,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "c3dc9dc0e05ec7a24e259b8be2e9581c1d174d57"
+                "reference": "69f80b704fd078348f69f1c4a8c6e98b9ceeb0a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/c3dc9dc0e05ec7a24e259b8be2e9581c1d174d57",
-                "reference": "c3dc9dc0e05ec7a24e259b8be2e9581c1d174d57",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/69f80b704fd078348f69f1c4a8c6e98b9ceeb0a8",
+                "reference": "69f80b704fd078348f69f1c4a8c6e98b9ceeb0a8",
                 "shasum": ""
             },
             "require": {
@@ -1707,7 +1707,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-22 08:57:32"
+            "time": "2017-02-26 22:45:04"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2125,12 +2125,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:webmodularity/laravel-cms.git",
-                "reference": "935bda1f9b326cdec96cf71a4c4435059097feee"
+                "reference": "c05c52a467919493b07630edd7894c776d9e1d62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmodularity/laravel-cms/zipball/935bda1f9b326cdec96cf71a4c4435059097feee",
-                "reference": "935bda1f9b326cdec96cf71a4c4435059097feee",
+                "url": "https://api.github.com/repos/webmodularity/laravel-cms/zipball/c05c52a467919493b07630edd7894c776d9e1d62",
+                "reference": "c05c52a467919493b07630edd7894c776d9e1d62",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2166,7 +2166,7 @@
                 "source": "https://github.com/webmodularity/laravel-cms/tree/master",
                 "issues": "https://github.com/webmodularity/laravel-cms/issues"
             },
-            "time": "2017-02-25 20:58:36"
+            "time": "2017-02-27 01:36:40"
         },
         {
             "name": "webmod/laravel-contact",
@@ -2363,12 +2363,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:webmodularity/laravel-user.git",
-                "reference": "5ffb8259f21e34a68a2cab0f1b41296ec8ee1552"
+                "reference": "7fb9b46be6f50eba54fa44dcba3c22080415121e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmodularity/laravel-user/zipball/5ffb8259f21e34a68a2cab0f1b41296ec8ee1552",
-                "reference": "5ffb8259f21e34a68a2cab0f1b41296ec8ee1552",
+                "url": "https://api.github.com/repos/webmodularity/laravel-user/zipball/7fb9b46be6f50eba54fa44dcba3c22080415121e",
+                "reference": "7fb9b46be6f50eba54fa44dcba3c22080415121e",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2406,7 +2406,7 @@
                 "source": "https://github.com/webmodularity/laravel-user/tree/master",
                 "issues": "https://github.com/webmodularity/laravel-user/issues"
             },
-            "time": "2017-02-25 03:51:06"
+            "time": "2017-02-27 01:35:37"
         },
         {
             "name": "yajra/laravel-datatables-oracle",
@@ -3728,25 +3728,30 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "1.0.8",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260"
+                "reference": "3dcf38ca72b158baf0bc245e9184d3fdffa9c46f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/38e9124049cf1a164f1e4537caf19c99bf1eb260",
-                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/3dcf38ca72b158baf0bc245e9184d3fdffa9c46f",
+                "reference": "3dcf38ca72b158baf0bc245e9184d3fdffa9c46f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4|~5"
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -3768,7 +3773,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2016-05-12 18:03:57"
+            "time": "2017-02-26 11:10:40"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -4173,25 +4178,25 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "2.0.0",
+            "version": "2.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "ce474bdd1a34744d7ac5d6aad3a46d48d9bac4c4"
+                "reference": "f9bb783afdb97da53c1b0b26283f0d63b9047647"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/ce474bdd1a34744d7ac5d6aad3a46d48d9bac4c4",
-                "reference": "ce474bdd1a34744d7ac5d6aad3a46d48d9bac4c4",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/f9bb783afdb97da53c1b0b26283f0d63b9047647",
+                "reference": "f9bb783afdb97da53c1b0b26283f0d63b9047647",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
-                "sebastian/recursion-context": "~2.0"
+                "php": "^5.3.3 || ^7.0",
+                "sebastian/recursion-context": "^2.0"
             },
             "require-dev": {
                 "ext-mbstring": "*",
-                "phpunit/phpunit": "~4.4"
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
             },
             "type": "library",
             "extra": {
@@ -4236,7 +4241,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2016-11-19 08:54:04"
+            "time": "2017-02-26 13:18:12"
         },
         {
             "name": "sebastian/global-state",

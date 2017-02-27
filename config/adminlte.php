@@ -114,7 +114,12 @@ return [
             'url'         => '/home',
             'icon'        => 'dashboard'
         ],
-
+        'USERS',
+        [
+            'text'        => 'User Log',
+            'url'         => '/user-log',
+            'icon'        => 'history'
+        ],
     ],
 
     /*

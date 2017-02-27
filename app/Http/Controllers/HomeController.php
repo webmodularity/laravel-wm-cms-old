@@ -17,10 +17,13 @@ class HomeController extends Controller
     {
         $recentUserActivity = LogUser::orderBy('created_at', 'desc')
             ->orderBy('id', 'desc')
-            ->limit(25)
+            ->recentDays(30)
+            ->limit(500)
             ->with([
+                'logRequest',
                 'logRequest.ipAddress',
                 'logRequest.urlPath',
+                'socialProvider',
                 'user.person'
             ])
             ->get();
