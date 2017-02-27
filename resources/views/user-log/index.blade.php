@@ -20,7 +20,6 @@
             <table id="user-log" class="table table-hover table-bordered">
                 <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Time</th>
                     <th>User</th>
                     <th>IP</th>
@@ -46,15 +45,19 @@
             "ordering": true,
             "info": true,
             "autoWidth": true,
-            "order": [[1, "desc"]],
+            "order": [[0, "desc"]],
             "processing": true,
             "serverSide": true,
             "ajax": '{!! route('user-log-ajax') !!}',
             "columns": [
-                { data: 'id', name: 'id' },
                 { data: 'created_at', name: 'created_at' },
                 { data: 'user.person.email', name: 'user.person.email' },
-                { data: 'log_request.ip_address.ip_address', name: 'logRequest.ipAddress.ip_address' },
+                {
+                    data: 'log_request.ip_address.ip_address',
+                    name: 'logRequest.ipAddress.ip_address',
+                    searchable: false,
+                    sortable: false
+                },
                 { data: 'user_action', name: 'user_action' },
                 { data: 'social_provider_id', name: 'social_provider_id' }
             ]
