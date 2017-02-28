@@ -23,8 +23,9 @@
                     <th>Time</th>
                     <th>User</th>
                     <th>IP</th>
-                    <th>User Action</th>
-                    <th>Social Provider ID</th>
+                    <th>Action</th>
+                    <th>URL</th>
+                    <th>Social</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,8 +54,9 @@
                 { data: 'created_at', name: 'created_at' },
                 { data: 'user.person.email', name: 'user.person.email' },
                 { data: 'log_request.ip_address.ip_address', name: 'logRequest.ipAddress.ip_address' },
-                { data: 'user_action', name: 'user_action' },
-                { data: 'social_provider_id', name: 'social_provider_id' }
+                { data: 'user_action.action', name: 'userAction.action' },
+                { data: 'log_request.url_path.url_path', name: 'logRequest.urlPath.url_path' },
+                { data: 'social_provider.provider.name', name: 'socialProvider.provider.name' }
             ]
         });
     });

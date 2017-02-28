@@ -19,6 +19,7 @@ class HomeController extends Controller
             ->recentDays(30)
             ->limit(500)
             ->with([
+                'userAction',
                 'logRequest',
                 'logRequest.ipAddress',
                 'logRequest.urlPath',
