@@ -2,45 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\UserLogDataTable;
 use WebModularity\LaravelUser\LogUser;
 use Illuminate\Http\Request;
-use Yajra\Datatables\Facades\Datatables;
-use DB;
 
 class UserLogController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
-    public function index()
+    public function index(UserLogDataTable $userLogDataTable)
     {
-        $userLog = LogUser::orderBy('created_at', 'desc')
-            ->orderBy('id', 'desc')
-            ->with([
-                'logRequest.ipAddress',
-                'logRequest.urlPath',
-                'user.person'
-            ])
-            ->get();
-
-        return view('user-log.index', [
-            'userLog' => $userLog
-        ]);
+        return $userLogDataTable->render('user-log.index');
     }
-
-    public function ajax()
-    {
-        return Datatables::eloquent(
-            LogUser::with([
-                'logRequest.ipAddress',
-                'logRequest.urlPath',
-                'user.person'
-            ])
-        )->make(true);
-    }
-
 
     /**
      * Show the form for creating a new resource.

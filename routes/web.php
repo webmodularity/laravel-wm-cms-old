@@ -22,5 +22,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('user-log', 'UserLogController', ['only' => [
         'index', 'show'
     ]]);
-    Route::get('user-log-ajax/index', 'UserLogController@ajax')->name('user-log-ajax');
 });

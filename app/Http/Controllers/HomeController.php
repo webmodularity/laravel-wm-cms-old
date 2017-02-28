@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use WebModularity\LaravelUser\LogUser;
-use Yajra\Datatables\Datatables;
 
 class HomeController extends Controller
 {

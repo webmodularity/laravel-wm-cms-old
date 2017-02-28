@@ -48,16 +48,11 @@
             "order": [[0, "desc"]],
             "processing": true,
             "serverSide": true,
-            "ajax": '{!! route('user-log-ajax') !!}',
+            "ajax": '{!! url()->current() !!}',
             "columns": [
                 { data: 'created_at', name: 'created_at' },
                 { data: 'user.person.email', name: 'user.person.email' },
-                {
-                    data: 'log_request.ip_address.ip_address',
-                    name: 'logRequest.ipAddress.ip_address',
-                    searchable: false,
-                    sortable: false
-                },
+                { data: 'log_request.ip_address.ip_address', name: 'logRequest.ipAddress.ip_address' },
                 { data: 'user_action', name: 'user_action' },
                 { data: 'social_provider_id', name: 'social_provider_id' }
             ]
