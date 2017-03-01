@@ -53,10 +53,10 @@
             "columns": [
                 { data: 'created_at', name: 'created_at' },
                 { data: 'user.person.email', name: 'user.person.email' },
-                { data: 'log_request.ip_address.ip_address', name: 'logRequest.ipAddress.ip_address' },
+                { data: 'ip', name: 'logRequest.ipAddress.ip', searchable: false },
                 { data: 'user_action.action', name: 'userAction.action' },
                 { data: 'log_request.url_path.url_path', name: 'logRequest.urlPath.url_path' },
-                { data: 'social_provider.provider.name', name: 'socialProvider.provider.name' }
+                { data: 'social_provider_name', name: 'socialProvider.provider.name' }
             ]
         });
     });

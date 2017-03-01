@@ -3,6 +3,8 @@
 namespace App\DataTables;
 
 use Carbon\Carbon;
+use Debugbar;
+use Log;
 use WebModularity\LaravelUser\LogUser;
 use Yajra\Datatables\Services\DataTable;
 
@@ -21,13 +23,13 @@ class UserLogDataTable extends DataTable
                 return $userLog->created_at ? with(new Carbon($userLog->created_at))->format('m/d/Y h:i:sa') : '';
             })
             ->filterColumn('created_at', function ($query, $keyword) {
-                $query->whereRaw("DATE_FORMAT(created_at,'%m/%d/%Y %h:%i:%s%p') like ?", ["%$keyword%"]);
+                $query->whereRaw("DATE_FORMAT(`log_users`.created_at,'%m/%d/%Y %h:%i:%s%p') like ?", ["%$keyword%"]);
             })
-            ->filterColumn('log_request.ip_address.ip_address', function ($query, $keyword) {
-                $query->whereRaw("INET6_NTOA(log_request.ip_address.ip_address) like ?", ["%$keyword%"]);
-            })
-            ->editColumn('social_provider.provider.name', function ($userLog) {
+            ->addColumn('social_provider_name', function ($userLog) {
                 return $userLog->socialProvider ? $userLog->socialProvider->provider->name : null;
+            })
+            ->addColumn('ip', function ($userLog) {
+                return $userLog->logRequest->ipAddress->ip;
             });
     }
 
