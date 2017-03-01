@@ -4,8 +4,8 @@ namespace App\DataTables;
 
 use Carbon\Carbon;
 use Debugbar;
-use Log;
 use WebModularity\LaravelUser\LogUser;
+use Yajra\Datatables\Html\Column;
 use Yajra\Datatables\Services\DataTable;
 
 class UserLogDataTable extends DataTable
@@ -19,18 +19,15 @@ class UserLogDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->editColumn('created_at', function ($userLog) {
-                return $userLog->created_at ? with(new Carbon($userLog->created_at))->format('m/d/Y h:i:sa') : '';
+            ->editColumn('created_at', function (LogUser $logUser) {
+                return $logUser->created_at ? with(new Carbon($logUser->created_at))->format('m/d/Y h:i:sa') : '';
             })
             ->filterColumn('created_at', function ($query, $keyword) {
                 $query->whereRaw("DATE_FORMAT(`log_users`.created_at,'%m/%d/%Y %h:%i:%s%p') like ?", ["%$keyword%"]);
-            })
-            ->addColumn('social_provider_name', function ($userLog) {
-                return $userLog->socialProvider ? $userLog->socialProvider->provider->name : null;
-            })
-            ->addColumn('ip', function ($userLog) {
-                return $userLog->logRequest->ipAddress->ip;
             });
+            //->addColumn('social_provider.provider.name', function (LogUser $logUser) {
+            //    return $logUser->socialProvider->provider->name;
+            //});
     }
 
     /**
@@ -41,6 +38,7 @@ class UserLogDataTable extends DataTable
     public function query()
     {
         $query = LogUser::with([
+                'logRequest',
                 'logRequest.ipAddress',
                 'logRequest.urlPath',
                 'user.person',
@@ -51,6 +49,17 @@ class UserLogDataTable extends DataTable
         return $this->applyScopes($query);
     }
 
+    public function html()
+    {
+        return $this->builder()
+            ->columns($this->getColumns())
+            ->parameters([
+                //'dom' => 'Bfrtip',
+                //'buttons' => ['export', 'print', 'reset', 'reload'],
+                //'order' => [[0, "desc"]]
+            ]);
+    }
+
     /**
      * Get columns.
      *
@@ -59,10 +68,54 @@ class UserLogDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'id',
-            // add your columns
-            'created_at',
-            'updated_at',
+            new Column(
+                [
+                    'data' => 'created_at',
+                    'title' => 'Time'
+                ]
+            ),
+            new Column(
+                [
+                    'data' => 'user.person.email',
+                    'title' => 'User'
+                ]
+            ),
+            new Column(
+                [
+                    'data' => 'log_request.ip_address.ip',
+                    'name' => 'logRequest.ipAddress.ip',
+                    'title' => 'IP',
+                    'searchable' => false
+                ]
+            ),
+            new Column(
+                [
+                    'data' => 'user_action.action',
+                    'name' => 'userAction.action',
+                    'title' => 'Action'
+                ]
+            ),
+            new Column(
+                [
+                    'data' => 'log_request.url_path.url_path',
+                    'name' => 'logRequest.urlPath.url_path',
+                    'title' => 'URL'
+                ]
+            ),
+            new Column(
+                [
+                    'data' => 'social_provider.provider.name',
+                    'name' => 'socialProvider.provider.name',
+                    'title' => 'Social'
+                ]
+            ),
+            new Column(
+                [
+                    'data' => 'log_request.session_id',
+                    'name' => 'logRequest.session_id',
+                    'title' => 'Session ID'
+                ]
+            )
         ];
     }
 
