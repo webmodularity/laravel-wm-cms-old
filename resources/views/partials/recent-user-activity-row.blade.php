@@ -4,6 +4,6 @@
     </td>
     <td>{{ $logUser->user->person->email }}</td>
     <td>{{ $logUser->logRequest->ipAddress->ip }}</td>
-    <td>{{ $logUser->userAction->action }}</td>
+    <td>{{ $logUser->userAction->slug }}</td>
     <td>{{ $logUser->logRequest->urlPath->url_path }}</td>
 </tr>

@@ -16,7 +16,7 @@
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
-            @if(!config('wm.user.social.social_login_only', false))
+            @if(config('wm.user.modes.local'))
                 <form action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
                     {!! csrf_field() !!}
 
@@ -69,14 +69,14 @@
                 </div>
             @endif()
             <!-- Social Logins -->
-            @if(isset($socialProviders) && count($socialProviders) > 0)
+            @if(config('wm.user.modes.social'))
                 <div class="social-auth-links text-center">
-                @if(!config('wm.user.social.social_login_only', false))
+                @if(config('wm.user.modes.local') && config('wm.user.modes.social'))
                     <p class="text-center">- OR -</p>
                 @endif()
                     @foreach($socialProviders as $socialProvider)
-                        <a href="social/{{ $socialProvider->provider->slug }}" class="btn btn-block btn-social btn-{{ $socialProvider->provider->slug }}">
-                            <i class="fa fa-{{ $socialProvider->provider->slug }}"></i> Sign in with {{ $socialProvider->provider->name }}
+                        <a href="social/{{ $socialProvider->slug }}" class="btn btn-block btn-social btn-{{ $socialProvider->slug }}">
+                            <i class="fa fa-{{ $socialProvider->slug }}"></i> Sign in with {{ $socialProvider->slug }}
                         </a>
                     @endforeach
 

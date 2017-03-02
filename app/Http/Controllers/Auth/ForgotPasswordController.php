@@ -27,6 +27,6 @@ class ForgotPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['guest', 'auth.social_login_only']);
+        $this->middleware(['guest', 'auth.local_users_allowed']);
     }
 }
