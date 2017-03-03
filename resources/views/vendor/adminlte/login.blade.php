@@ -76,7 +76,7 @@
                 @endif()
                     @foreach($socialProviders as $socialProvider)
                         <a href="social/{{ $socialProvider->slug }}" class="btn btn-block btn-social btn-{{ $socialProvider->slug }}">
-                            <i class="fa fa-{{ $socialProvider->slug }}"></i> Sign in with {{ $socialProvider->slug }}
+                            <i class="fa fa-{{ $socialProvider->slug }}"></i> Sign in with {{ $socialProvider->getName() }}
                         </a>
                     @endforeach
 

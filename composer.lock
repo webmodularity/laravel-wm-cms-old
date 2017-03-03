@@ -407,12 +407,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "3ba0d532ba527b6d99e7c1d6bb914d296c8dd69b"
+                "reference": "35f0bb188479e469c86326ae269a2965d2f2f73a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/3ba0d532ba527b6d99e7c1d6bb914d296c8dd69b",
-                "reference": "3ba0d532ba527b6d99e7c1d6bb914d296c8dd69b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/35f0bb188479e469c86326ae269a2965d2f2f73a",
+                "reference": "35f0bb188479e469c86326ae269a2965d2f2f73a",
                 "shasum": ""
             },
             "require": {
@@ -528,7 +528,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-03-02 15:21:10"
+            "time": "2017-03-03 19:07:44"
         },
         {
             "name": "laravel/socialite",
@@ -1080,16 +1080,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.7",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "b5ea1ef3d8ff10c307ba8c5945c2f134e503278f"
+                "reference": "6968531206671f94377b01dc7888d5d1b858a01b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/b5ea1ef3d8ff10c307ba8c5945c2f134e503278f",
-                "reference": "b5ea1ef3d8ff10c307ba8c5945c2f134e503278f",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/6968531206671f94377b01dc7888d5d1b858a01b",
+                "reference": "6968531206671f94377b01dc7888d5d1b858a01b",
                 "shasum": ""
             },
             "require": {
@@ -1124,7 +1124,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-02-27 17:11:23"
+            "time": "2017-03-03 20:43:42"
         },
         {
             "name": "phpoffice/phpexcel",
@@ -2070,12 +2070,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "3112755a65688717264116441e2d2ff5c17a9c53"
+                "reference": "5e7bf21bf802ff0acd1214699e57ff7add0446ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/3112755a65688717264116441e2d2ff5c17a9c53",
-                "reference": "3112755a65688717264116441e2d2ff5c17a9c53",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/5e7bf21bf802ff0acd1214699e57ff7add0446ee",
+                "reference": "5e7bf21bf802ff0acd1214699e57ff7add0446ee",
                 "shasum": ""
             },
             "require": {
@@ -2137,7 +2137,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-02-28 21:57:59"
+            "time": "2017-03-03 15:02:38"
         },
         {
             "name": "symfony/translation",
@@ -2562,16 +2562,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:webmodularity/laravel-user.git",
-                "reference": "d053c70ec70f8c67299553f81318c51c4b50e836"
+                "reference": "1b8ef760fa89aac0970238a9fb94e3395c3382b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmodularity/laravel-user/zipball/d053c70ec70f8c67299553f81318c51c4b50e836",
-                "reference": "d053c70ec70f8c67299553f81318c51c4b50e836",
+                "url": "https://api.github.com/repos/webmodularity/laravel-user/zipball/1b8ef760fa89aac0970238a9fb94e3395c3382b6",
+                "reference": "1b8ef760fa89aac0970238a9fb94e3395c3382b6",
                 "shasum": "",
                 "mirrors": [
                     {
-                        "url": "https://toran.webmodularity.com/repo/private/dists/%package%/%version%/%reference%.%type%",
+                        "url": "http://toran.webmodularity.com/repo/private/dists/%package%/%version%/%reference%.%type%",
                         "preferred": true
                     }
                 ]
@@ -2604,7 +2604,7 @@
                 "source": "https://github.com/webmodularity/laravel-user/tree/master",
                 "issues": "https://github.com/webmodularity/laravel-user/issues"
             },
-            "time": "2017-03-02 11:05:10"
+            "time": "2017-03-03 23:21:43"
         },
         {
             "name": "yajra/laravel-datatables-buttons",
@@ -2788,12 +2788,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "a964c7ba6dc0c43fd0e729855cce27dcc8b11676"
+                "reference": "e1ee861ebaab6537dbe295a13deba55f6bb677ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/a964c7ba6dc0c43fd0e729855cce27dcc8b11676",
-                "reference": "a964c7ba6dc0c43fd0e729855cce27dcc8b11676",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/e1ee861ebaab6537dbe295a13deba55f6bb677ec",
+                "reference": "e1ee861ebaab6537dbe295a13deba55f6bb677ec",
                 "shasum": ""
             },
             "require": {
@@ -2834,7 +2834,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2017-02-15 14:40:19"
+            "time": "2017-03-03 08:36:40"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -3161,12 +3161,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "fe32728bfb6bec4209eb7953287f862283ee8a0f"
+                "reference": "7f38522e3962b3625b4b7a1cb9a4fb9f55367fac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/fe32728bfb6bec4209eb7953287f862283ee8a0f",
-                "reference": "fe32728bfb6bec4209eb7953287f862283ee8a0f",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/7f38522e3962b3625b4b7a1cb9a4fb9f55367fac",
+                "reference": "7f38522e3962b3625b4b7a1cb9a4fb9f55367fac",
                 "shasum": ""
             },
             "require": {
@@ -3226,7 +3226,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2017-02-04 21:51:16"
+            "time": "2017-03-03 19:27:32"
         },
         {
             "name": "doctrine/dbal",
@@ -3825,16 +3825,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.7.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "93d39f1f7f9326d746203c7c056f300f7f126073"
+                "reference": "abe41cb27f4e4207c6f54a09272969fe55e0bbff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/93d39f1f7f9326d746203c7c056f300f7f126073",
-                "reference": "93d39f1f7f9326d746203c7c056f300f7f126073",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/abe41cb27f4e4207c6f54a09272969fe55e0bbff",
+                "reference": "abe41cb27f4e4207c6f54a09272969fe55e0bbff",
                 "shasum": ""
             },
             "require": {
@@ -3851,7 +3851,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "1.7.x-dev"
                 }
             },
             "autoload": {
@@ -3884,7 +3884,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-03-02 20:05:34"
+            "time": "2017-03-03 17:09:02"
         },
         {
             "name": "phpunit/php-code-coverage",
