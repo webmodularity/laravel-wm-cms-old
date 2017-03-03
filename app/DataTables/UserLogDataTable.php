@@ -24,10 +24,10 @@ class UserLogDataTable extends DataTable
             })
             ->filterColumn('created_at', function ($query, $keyword) {
                 $query->whereRaw("DATE_FORMAT(`log_users`.created_at,'%m/%d/%Y %h:%i:%s%p') like ?", ["%$keyword%"]);
+            })
+            ->addColumn('social_provider_name', function (LogUser $logUser) {
+                return !is_null($logUser->socialProvider) ? $logUser->socialProvider->slug : null;
             });
-            //->addColumn('social_provider.provider.name', function (LogUser $logUser) {
-            //    return $logUser->socialProvider->provider->name;
-            //});
     }
 
     /**
@@ -43,7 +43,7 @@ class UserLogDataTable extends DataTable
                 'logRequest.urlPath',
                 'user.person',
                 'userAction',
-                'socialProvider.provider'
+                'socialProvider'
             ]);
 
         return $this->applyScopes($query);
@@ -56,7 +56,7 @@ class UserLogDataTable extends DataTable
             ->parameters([
                 //'dom' => 'Bfrtip',
                 //'buttons' => ['export', 'print', 'reset', 'reload'],
-                //'order' => [[0, "desc"]]
+                'order' => [[0, "desc"]]
             ]);
     }
 
@@ -90,8 +90,8 @@ class UserLogDataTable extends DataTable
             ),
             new Column(
                 [
-                    'data' => 'user_action.action',
-                    'name' => 'userAction.action',
+                    'data' => 'user_action.slug',
+                    'name' => 'userAction.slug',
                     'title' => 'Action'
                 ]
             ),
@@ -104,8 +104,8 @@ class UserLogDataTable extends DataTable
             ),
             new Column(
                 [
-                    'data' => 'social_provider.provider.name',
-                    'name' => 'socialProvider.provider.name',
+                    'data' => 'social_provider_name',
+                    'name' => 'socialProvider.slug',
                     'title' => 'Social'
                 ]
             ),
