@@ -3,7 +3,6 @@
 namespace App\DataTables;
 
 use Carbon\Carbon;
-use Debugbar;
 use WebModularity\LaravelUser\LogUser;
 use Yajra\Datatables\Html\Column;
 use Yajra\Datatables\Services\DataTable;
@@ -26,7 +25,7 @@ class UserLogDataTable extends DataTable
                 $query->whereRaw("DATE_FORMAT(`log_users`.created_at,'%m/%d/%Y %h:%i:%s%p') like ?", ["%$keyword%"]);
             })
             ->addColumn('social_provider_name', function (LogUser $logUser) {
-                return !is_null($logUser->socialProvider) ? $logUser->socialProvider->slug : null;
+                return !is_null($logUser->socialProvider) ? $logUser->socialProvider->getName() : null;
             });
     }
 
@@ -38,13 +37,14 @@ class UserLogDataTable extends DataTable
     public function query()
     {
         $query = LogUser::with([
-                'logRequest',
-                'logRequest.ipAddress',
-                'logRequest.urlPath',
-                'user.person',
-                'userAction',
-                'socialProvider'
-            ]);
+            'logRequest',
+            'logRequest.ipAddress',
+            'logRequest.urlPath',
+            'logRequest.requestMethod',
+            'user.person',
+            'userAction',
+            'socialProvider'
+        ]);
 
         return $this->applyScopes($query);
     }
@@ -54,9 +54,12 @@ class UserLogDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->parameters([
-                //'dom' => 'Bfrtip',
-                //'buttons' => ['export', 'print', 'reset', 'reload'],
-                'order' => [[0, "desc"]]
+                'dom' => "<'row'<'col-sm-6'B><'col-sm-6'f>>" .
+                    "<'row'<'col-sm-12'tr>>" .
+                    "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+                'buttons' => ['export', 'print', 'copy', 'reload'],
+                'order' => [[0, "desc"]],
+                'responsive' => true
             ]);
     }
 
@@ -71,13 +74,15 @@ class UserLogDataTable extends DataTable
             new Column(
                 [
                     'data' => 'created_at',
-                    'title' => 'Time'
+                    'title' => 'Time',
+                    'className' => 'max-desktop'
                 ]
             ),
             new Column(
                 [
                     'data' => 'user.person.email',
-                    'title' => 'User'
+                    'title' => 'User',
+                    'className' => 'max-desktop'
                 ]
             ),
             new Column(
@@ -85,6 +90,7 @@ class UserLogDataTable extends DataTable
                     'data' => 'log_request.ip_address.ip',
                     'name' => 'logRequest.ipAddress.ip',
                     'title' => 'IP',
+                    'className' => 'min-tablet-l',
                     'searchable' => false
                 ]
             ),
@@ -92,28 +98,59 @@ class UserLogDataTable extends DataTable
                 [
                     'data' => 'user_action.slug',
                     'name' => 'userAction.slug',
-                    'title' => 'Action'
+                    'title' => 'Action',
+                    'className' => 'min-tablet-l'
+                ]
+            ),
+            new Column(
+                [
+                    'data' => 'log_request.request_method.method',
+                    'name' => 'logRequest.requestMethod.method',
+                    'title' => 'Method',
+                    'className' => 'desktop'
                 ]
             ),
             new Column(
                 [
                     'data' => 'log_request.url_path.url_path',
                     'name' => 'logRequest.urlPath.url_path',
-                    'title' => 'URL'
+                    'title' => 'URL',
+                    'className' => 'desktop',
+                    'render' => 'function() {
+                                    var max = 25;
+                                    if ( type === \'display\' && data.length > max) {
+                                        return \'&#8230;\' + data.substr(-max);
+                                    }
+                                    return data;
+                                }'
                 ]
             ),
             new Column(
                 [
                     'data' => 'social_provider_name',
                     'name' => 'socialProvider.slug',
-                    'title' => 'Social'
+                    'title' => 'Social',
+                    'className' => 'desktop',
+                    'render' => 'function() {
+                                    if ( type === \'display\' && !data) {
+                                        return \'<em>None</em>\';
+                                    }
+                                    return data;
+                    }'
                 ]
             ),
             new Column(
                 [
                     'data' => 'log_request.session_id',
                     'name' => 'logRequest.session_id',
-                    'title' => 'Session ID'
+                    'title' => 'Session ID',
+                    'className' => 'desktop',
+                    'render' => 'function() {
+                                    if ( type === \'display\' ) {
+                                        return data.substr(0, 7) +\'&#8230;\';
+                                    }
+                                    return data;
+                                }'
                 ]
             )
         ];

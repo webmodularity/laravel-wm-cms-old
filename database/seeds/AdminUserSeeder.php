@@ -18,13 +18,14 @@ class AdminUserSeeder extends Seeder
 
         $socialProviderId = DB::table('user_social_providers')->insertGetId([
             'slug' => 'github',
+            'status' => true
         ]);
 
         DB::table('user_invitations')->insert([
             'social_provider_id' => $socialProviderId,
             'person_id' => $personId,
             'role_id' => 255,
-            'status' => 1
+            'status' => true
         ]);
     }
 }

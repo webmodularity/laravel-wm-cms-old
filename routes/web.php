@@ -13,8 +13,8 @@
 
 Auth::routes();
 // Social Auth Routes
-Route::get('social/{userSocialProvider}', "Auth\LoginController@redirectSocialUser");
-Route::get('social/handle/{userSocialProvider}', "Auth\LoginController@loginSocialUser");
+Route::get('social/{socialProvider}', "Auth\LoginController@redirectSocialUser");
+Route::get('social/handle/{socialProvider}', "Auth\LoginController@loginSocialUser");
 
 Route::get('/', function () {
     return redirect('/home');

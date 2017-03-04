@@ -5,11 +5,11 @@
         var url = dt.ajax.url() || '';
         var params = dt.ajax.params();
         params.action = action;
-        
-        if (url.indexOf("?")) {
+
+        if (url.indexOf("?") > 0) {
             return url + '&' + $.param(params);
         }
-        
+
         return url + '?' + $.param(params);
     };
 

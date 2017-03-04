@@ -171,6 +171,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         WebModularity\LaravelCms\CmsServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Application Service Providers...
