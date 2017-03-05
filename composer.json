@@ -1,6 +1,6 @@
 {
-    "name": "webmod/laravel-cms-skeleton",
-    "description": "WebModularity CMS Skeleton.",
+    "name": "webmod/laravel-wm-cms",
+    "description": "WebModularity CMS.",
     "license": "proprietary",
     "authors": [
         {
