@@ -169,7 +169,6 @@ return [
         // Laravel\Tinker\TinkerServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         WebModularity\LaravelCms\CmsServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
 

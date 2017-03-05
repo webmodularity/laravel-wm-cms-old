@@ -22,7 +22,4 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index');
-    Route::resource('user-log', 'UserLogController', ['only' => [
-        'index', 'show'
-    ]]);
 });
