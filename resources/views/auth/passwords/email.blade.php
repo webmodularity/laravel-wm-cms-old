@@ -1,1 +1,1 @@
-@extends('adminlte::passwords.email')
+@extends('wmcms::passwords.email')

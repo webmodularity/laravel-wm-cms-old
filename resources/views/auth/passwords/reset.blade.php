@@ -1,1 +1,1 @@
-@extends('adminlte::passwords.reset')
+@extends('wmcms::passwords.reset')

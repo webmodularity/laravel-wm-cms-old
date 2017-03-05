@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('wmcms::page')
 
 @section('title', 'Dashboard')
 
@@ -41,7 +41,7 @@
         $(function () {
             $('#recent-user-activity').DataTable({
                 "paging": true,
-                "lengthChange": false,
+                "lengthChange": true,
                 "searching": true,
                 "ordering": true,
                 "info": true,
