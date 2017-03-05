@@ -13,6 +13,16 @@
         return url + '?' + $.param(params);
     };
 
+    DataTable.ext.buttons.wmcopy = {
+        extend: 'copy',
+
+        className: 'buttons-copy',
+
+        text: function (dt) {
+            return '<i class="fa fa-copy"></i> ' + dt.i18n('buttons.excel', 'Copy');
+        },
+    };
+
     DataTable.ext.buttons.excel = {
         className: 'buttons-excel',
 
@@ -34,6 +44,8 @@
         text: function (dt) {
             return '<i class="fa fa-download"></i> ' + dt.i18n('buttons.export', 'Export') + '&nbsp;<span class="caret"/>';
         },
+
+        background: false,
 
         buttons: ['csv', 'excel', 'pdf']
     };

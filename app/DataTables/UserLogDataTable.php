@@ -57,10 +57,17 @@ class UserLogDataTable extends DataTable
                 'dom' => "<'row'<'col-sm-6'B><'col-sm-6'f>>" .
                     "<'row'<'col-sm-12'tr>>" .
                     "<'row'<'col-sm-5'i><'col-sm-7'p>>",
-                'buttons' => ['export', 'print', 'reset'],
+                'buttons' => ['export', 'wmcopy', 'print', 'reset'],
                 'order' => [[0, "desc"]],
                 'responsive' => true
             ]);
+            //->addAction(
+            //    [
+            //        'className' => 'all text-center',
+            //        'render' => "function(){ return '<i class=\'fa fa-eye\'></i>';}",
+            //        'title' => 'Details'
+            //    ]
+            //);
     }
 
     /**
