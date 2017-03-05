@@ -170,7 +170,6 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         WebModularity\LaravelCms\CmsServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Application Service Providers...
