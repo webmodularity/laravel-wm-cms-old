@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8eb57cad95f6625c437306de87b670ca",
-    "content-hash": "4cb8f95c35e2ef6841044b85ddd1327b",
+    "hash": "07c27a17663e9ac65cb46e0db8d3ab36",
+    "content-hash": "b1abe716efa4eca02028b3429e0dba1e",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2526,16 +2526,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:webmodularity/laravel-contact.git",
-                "reference": "b8368e2a0d9a827dc45c3bbca43a60ea860277af"
+                "reference": "326bb8ac85737b6558b37966a779da8fae91aff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmodularity/laravel-contact/zipball/b8368e2a0d9a827dc45c3bbca43a60ea860277af",
-                "reference": "b8368e2a0d9a827dc45c3bbca43a60ea860277af",
+                "url": "https://api.github.com/repos/webmodularity/laravel-contact/zipball/326bb8ac85737b6558b37966a779da8fae91aff1",
+                "reference": "326bb8ac85737b6558b37966a779da8fae91aff1",
                 "shasum": "",
                 "mirrors": [
                     {
-                        "url": "https://toran.webmodularity.com/repo/private/dists/%package%/%version%/%reference%.%type%",
+                        "url": "http://toran.webmodularity.com/repo/private/dists/%package%/%version%/%reference%.%type%",
                         "preferred": true
                     }
                 ]
@@ -2564,7 +2564,7 @@
                 "source": "https://github.com/webmodularity/laravel-contact/tree/master",
                 "issues": "https://github.com/webmodularity/laravel-contact/issues"
             },
-            "time": "2017-03-02 09:22:25"
+            "time": "2017-03-06 02:44:43"
         },
         {
             "name": "webmod/laravel-log",
