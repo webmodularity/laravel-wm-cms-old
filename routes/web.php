@@ -11,15 +11,21 @@
 |
 */
 
-Auth::routes();
-// Social Auth Routes
-Route::get('social/{socialProvider}', "Auth\LoginController@redirectSocialUser");
-Route::get('social/handle/{socialProvider}', "Auth\LoginController@loginSocialUser");
-
-Route::get('/', function () {
-    return redirect('/home');
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Auth::routes();
+    // Social Auth Routes
+    Route::get('social/{socialProvider}', "Auth\LoginController@redirectSocialUser");
+    Route::get('social/handle/{socialProvider}', "Auth\LoginController@loginSocialUser");
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/home', 'HomeController@index');
+    Route::group(['namespace' => 'App\Http\Controllers'], function () {
+        Route::get('/', 'DashboardController@index');
+    });
+
+    Route::group(['namespace' => '\WebModularity\LaravelCms\Http\Controllers'], function () {
+        Route::resource('user-log', 'UserLogController', ['only' => [
+            'index', 'show'
+        ]]);
+    });
 });

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use WebModularity\LaravelUser\LogUser;
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {
 
     /**
@@ -28,7 +28,7 @@ class HomeController extends Controller
             ])
             ->get();
 
-        return view('home', [
+        return view('dashboard', [
             'recentUserActivity' => $recentUserActivity
         ]);
     }

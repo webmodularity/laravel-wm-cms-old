@@ -111,7 +111,8 @@ return [
         'MAIN NAVIGATION',
         [
             'text'        => 'Dashboard',
-            'url'         => '/home',
+            'url'         => '/',
+            'active'      => ['/'],
             'icon'        => 'dashboard'
         ],
         'USERS',
