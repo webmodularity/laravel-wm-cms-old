@@ -2668,12 +2668,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:webmodularity/laravel-user.git",
-                "reference": "18188e5eb60d75c240651c2b3fbc45d70639dbbb"
+                "reference": "158cc9cf625fae7f7316d2b1faa15dfd6a55bddf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmodularity/laravel-user/zipball/18188e5eb60d75c240651c2b3fbc45d70639dbbb",
-                "reference": "18188e5eb60d75c240651c2b3fbc45d70639dbbb",
+                "url": "https://api.github.com/repos/webmodularity/laravel-user/zipball/158cc9cf625fae7f7316d2b1faa15dfd6a55bddf",
+                "reference": "158cc9cf625fae7f7316d2b1faa15dfd6a55bddf",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2710,7 +2710,7 @@
                 "source": "https://github.com/webmodularity/laravel-user/tree/master",
                 "issues": "https://github.com/webmodularity/laravel-user/issues"
             },
-            "time": "2017-03-07 00:00:24"
+            "time": "2017-03-07 01:52:33"
         },
         {
             "name": "yajra/laravel-datatables-buttons",
